@@ -3,4 +3,12 @@ eureka:
     service-url:
       defaultZone:  ${EUREKA_URL:http://localhost:8761/eureka}
   instance:
-    prefer-ip-address: true
+    hostname: localhost
+    instanceId : ${spring.application.name}:${random.value}
+    metadata-map:
+      #Integrated into Prometheus, the following data will be added to the tags before the Prometheus re tag, for example, sys. Module will become
+      "prometheus.scrape": "true"
+      "prometheus.path": "/ead-authuser/actuator/prometheus"
+      "sys.module": "order"
+    statusPageUrlPath: ${server.servlet.context-path}actuator/info
+    healthCheckUrlPath: ${server.servlet.context-path}actuator/health

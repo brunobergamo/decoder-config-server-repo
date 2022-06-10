@@ -65,7 +65,7 @@ resilience4j:
   circuitbreaker:
     instances:
       circuitbreakerInstance:
-        slidingWindowSize: 30
+        slidingWindowSize: 40
         permittedNumberOfCallsInHalfOpenState: 2
         slidingWindowType: TIME_BASED
         minimumNumberOfCalls: 2

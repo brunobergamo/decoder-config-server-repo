@@ -2,6 +2,9 @@ ead:
   serviceRegistry:
     username: admin
     password: 'admin'
+  auth:
+    jwtSecret: 8x/A?D(G+KbPeShVmYq3s6v9y$B&E)H@
+    jwtExpirationMs: 14400000
 
 eureka:
   client:

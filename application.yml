@@ -3,7 +3,7 @@ ead:
     username: admin
     password: 'admin'
   auth:
-    jwtSecret: 8x/A?D(G+KbPeShVmYq3s6v9y$B&E)H@
+    jwtSecret: gVkYp3s6v9y$B&E)H@McQfThWmZq4t7w!z%C*F-JaNdRgUkXn2r5u8x/A?D(G+Kb
     jwtExpirationMs: 14400000
 
 eureka:

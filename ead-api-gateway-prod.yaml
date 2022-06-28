@@ -1,6 +1,7 @@
 server:
   port: ${PORT}
-
+  servlet:
+    context-path: '/'
 spring:
   application:
     name: ead-api-gateway

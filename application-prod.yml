@@ -1,0 +1,22 @@
+ead:
+  serviceRegistry:
+    username: admin
+    password: '{cipher}2f4d4a428a79d27c72dc1555d692fefec84731c8e9f60bd5d89f520a389f362e'
+  auth:
+    jwtSecret: '{cipher}fdef9b788752b981e474d6b593b1745060ab01c3a3f7ad75c552eea8d8f8b1a06bc2de5fa21c8196662760b69861f1400e223bb69951d02a1fea2bacb3f5d4be8524b34a1d1b3cd4979895530502e78d9de17250ce1a689a9467bfcf4c10a32a'
+    jwtExpirationMs: 14400000
+
+eureka:
+  client:
+    service-url:
+      defaultZone:  $http://${ead.serviceRegistry.username}:${ead.serviceRegistry.password}@bruno-ead-serviceregistry-prod.herokuapp.com/eureka
+  instance:
+    hostname: ${APP_DOMAIN_NAME}
+    instanceId : ${spring.application.name}:${random.value}
+    metadata-map:
+      #Integrated into Prometheus, the following data will be added to the tags before the Prometheus re tag, for example, sys. Module will become
+      "prometheus.scrape": "true"
+      "prometheus.path": "/ead-authuser/actuator/prometheus"
+      "sys.module": "order"
+    statusPageUrlPath: ${server.servlet.context-path}actuator/info
+    healthCheckUrlPath: ${server.servlet.context-path}actuator/health

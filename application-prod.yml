@@ -18,5 +18,3 @@ eureka:
       "prometheus.scrape": "true"
       "prometheus.path": "/ead-authuser/actuator/prometheus"
       "sys.module": "order"
-    statusPageUrlPath: ${server.servlet.context-path}actuator/info
-    healthCheckUrlPath: ${server.servlet.context-path}actuator/health

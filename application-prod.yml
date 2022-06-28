@@ -9,7 +9,7 @@ ead:
 eureka:
   client:
     service-url:
-      defaultZone:  'http://${ead.serviceRegistry.username}:${ead.serviceRegistry.password}@bruno-ead-serviceregistry-prod.herokuapp.com/eureka
+      defaultZone:  'http://${ead.serviceRegistry.username}:${ead.serviceRegistry.password}@bruno-ead-serviceregistry-prod.herokuapp.com/eureka'
   instance:
     hostname: ${APP_DOMAIN_NAME}
     instanceId : ${spring.application.name}:${random.value}
